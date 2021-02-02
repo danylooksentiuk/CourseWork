@@ -1,0 +1,11 @@
+---
+  - hosts: all
+    become: yes
+    vars_files:
+      - vars/vars.yaml
+    user: root
+
+    tasks:
+
+    - name: Create default containers
+      command: "docker run -d -p 80:8080 --name danya danylooksentiuk/course-work"
